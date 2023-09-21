@@ -1,0 +1,14 @@
+C:\Code\InterviewReviewer\InterviewReviewer\bin\Debug\net6.0\InterviewReviewer.exe
+C:\Code\InterviewReviewer\InterviewReviewer\bin\Debug\net6.0\InterviewReviewer.deps.json
+C:\Code\InterviewReviewer\InterviewReviewer\bin\Debug\net6.0\InterviewReviewer.runtimeconfig.json
+C:\Code\InterviewReviewer\InterviewReviewer\bin\Debug\net6.0\InterviewReviewer.dll
+C:\Code\InterviewReviewer\InterviewReviewer\bin\Debug\net6.0\InterviewReviewer.pdb
+C:\Code\InterviewReviewer\InterviewReviewer\obj\Debug\net6.0\InterviewReviewer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Code\InterviewReviewer\InterviewReviewer\obj\Debug\net6.0\InterviewReviewer.AssemblyInfoInputs.cache
+C:\Code\InterviewReviewer\InterviewReviewer\obj\Debug\net6.0\InterviewReviewer.AssemblyInfo.cs
+C:\Code\InterviewReviewer\InterviewReviewer\obj\Debug\net6.0\InterviewReviewer.csproj.CoreCompileInputs.cache
+C:\Code\InterviewReviewer\InterviewReviewer\obj\Debug\net6.0\InterviewReviewer.dll
+C:\Code\InterviewReviewer\InterviewReviewer\obj\Debug\net6.0\refint\InterviewReviewer.dll
+C:\Code\InterviewReviewer\InterviewReviewer\obj\Debug\net6.0\InterviewReviewer.pdb
+C:\Code\InterviewReviewer\InterviewReviewer\obj\Debug\net6.0\InterviewReviewer.genruntimeconfig.cache
+C:\Code\InterviewReviewer\InterviewReviewer\obj\Debug\net6.0\ref\InterviewReviewer.dll
