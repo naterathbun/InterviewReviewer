@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Challenge Classes\" />
+    <Folder Include="Tests\" />
   </ItemGroup>
 
 </Project>

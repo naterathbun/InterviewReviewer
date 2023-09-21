@@ -8,6 +8,10 @@ namespace InterviewReviewer.Interfaces
 {
     public interface IChallenge
     {
+        public string Name { get; set; }
 
+        public string GetName();
+        public string DescribeChallenge();
+        public void DoChallenge();
     }
 }
