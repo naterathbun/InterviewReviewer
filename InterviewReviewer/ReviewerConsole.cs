@@ -11,10 +11,10 @@ namespace InterviewReviewer
         {
             Challenges = new List<IChallenge>()
             {
-                new PrimeNumberChecker(),
                 new StringPalindromeChecker(),
                 new StringReverser(),
-                new StringSubstringFinder()
+                new StringSubstringFinder(),
+                new PrimeNumberChecker(),
             };
         }
 
@@ -28,11 +28,11 @@ namespace InterviewReviewer
 
                 if (int.TryParse(choice, out int choiceNumber) && choiceNumber > 0 && choiceNumber <= Challenges.Count())
                 {
-                    Console.WriteLine("Opening Challenge {0}...", choiceNumber);
-                    Console.ReadLine();
+                    var challenge = Challenges[choiceNumber - 1];
 
-                    // Run Challenges Here
-
+                    Console.WriteLine("{0}: {1}", challenge.Name, challenge.DescribeChallenge());
+                    
+                    challenge.DoChallenge();
                 }
             }
         }
