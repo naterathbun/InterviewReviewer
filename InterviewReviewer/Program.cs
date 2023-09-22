@@ -1,1 +1,4 @@
-﻿Console.ReadLine();
+﻿using InterviewReviewer;
+
+var reviewerConsole = new ReviewerConsole();
+reviewerConsole.DisplayChallenges();
