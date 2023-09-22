@@ -1,20 +1,15 @@
 ﻿using InterviewReviewer.Challenge_Classes;
 using InterviewReviewer.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InterviewReviewer
 {
     internal class ReviewerConsole
     {
-        public List<IChallenge> Challanges { get; set; }
+        public List<IChallenge> Challenges { get; set; }
 
         public ReviewerConsole()
         {
-            Challanges = new List<IChallenge>()
+            Challenges = new List<IChallenge>()
             {
                 new PrimeNumberChecker(),
                 new StringPalindromeChecker(),
@@ -29,8 +24,17 @@ namespace InterviewReviewer
             Console.WriteLine("---------------------\n");
             Console.WriteLine("Choose a Challenge:\n");
 
-            ListChallenges();
-            var choice = Console.ReadLine();
+            var choice = int.Parse(Console.ReadLine());
+
+            // check choice is valid
+            // non null
+            // is an int
+            // is <= Challenges.Count
+
+
+
+
+
 
 
         }
@@ -39,7 +43,7 @@ namespace InterviewReviewer
         {
             var challengeNumber = 1;
 
-            foreach (IChallenge challenge in Challanges)
+            foreach (IChallenge challenge in Challenges)
             {
                 Console.WriteLine(challengeNumber.ToString() + ": " + challenge.GetName());
                 challengeNumber++;
