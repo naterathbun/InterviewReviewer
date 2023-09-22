@@ -7,15 +7,16 @@ namespace InterviewReviewer
     {
         public List<IChallenge> Challenges { get; set; }
 
-        public ReviewerConsole()
+        public ReviewerConsole(List<IChallenge> challenges)
         {
-            Challenges = new List<IChallenge>()
-            {
-                new StringPalindromeChecker(),
-                new StringReverser(),
-                new StringSubstringFinder(),
-                new PrimeNumberChecker(),
-            };
+            Challenges = challenges;
+            //Challenges = new List<IChallenge>()
+            //{
+            //    new StringPalindromeChecker(),
+            //    new StringReverser(),
+            //    new StringSubstringFinder(),
+            //    new PrimeNumberChecker(),
+            //};
         }
 
         public void DisplayChallenges()
@@ -46,7 +47,7 @@ namespace InterviewReviewer
             Console.WriteLine("---------------------\n");
             Console.WriteLine("Choose a Challenge Number:\n");
 
-            for (int i = 1; i <= Challenges.Count(); i++)
+            for (int i = 1; i <= Challenges.Count; i++)
             {
                 Console.WriteLine("{0}: {1}", i, Challenges[i - 1].Name);
             }
