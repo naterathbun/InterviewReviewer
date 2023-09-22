@@ -10,13 +10,6 @@ namespace InterviewReviewer
         public ReviewerConsole(List<IChallenge> challenges)
         {
             Challenges = challenges;
-            //Challenges = new List<IChallenge>()
-            //{
-            //    new StringPalindromeChecker(),
-            //    new StringReverser(),
-            //    new StringSubstringFinder(),
-            //    new PrimeNumberChecker(),
-            //};
         }
 
         public void DisplayChallenges()
