@@ -1,16 +1,10 @@
 ﻿using InterviewReviewer.Interfaces;
-using System.Numerics;
 
 namespace InterviewReviewer.Challenge_Classes
 {
     internal class StringPalindromeChecker : IChallenge
     {
         public string Name { get; set; } = "String Palindrome Checker";
-
-        public string GetName()
-        {
-            return Name;
-        }
 
         public string DescribeChallenge()
         {
@@ -31,8 +25,7 @@ namespace InterviewReviewer.Challenge_Classes
             if (stringToCheck != reversedString)
                 Console.Write(" not");
 
-            Console.Write(" a palindrome!");
-            Console.ReadLine();
+            Console.Write(" a palindrome!");            
         }
     }
 }

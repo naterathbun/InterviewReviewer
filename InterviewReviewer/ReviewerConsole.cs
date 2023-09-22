@@ -33,6 +33,8 @@ namespace InterviewReviewer
                     Console.WriteLine("{0}: {1}", challenge.Name, challenge.DescribeChallenge());
                     
                     challenge.DoChallenge();
+                    Console.WriteLine("\n\nPress Enter to return to main menu.");
+                    Console.ReadLine();
                 }
             }
         }
@@ -46,7 +48,7 @@ namespace InterviewReviewer
 
             for (int i = 1; i <= Challenges.Count(); i++)
             {
-                Console.WriteLine("{0}: {1}",i, Challenges[i - 1].GetName());
+                Console.WriteLine("{0}: {1}", i, Challenges[i - 1].Name);
             }
 
             Console.WriteLine("\n");

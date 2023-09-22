@@ -6,10 +6,6 @@ namespace InterviewReviewer.Challenge_Classes
     {
         public string Name { get; set; } = "Prime Number Checker";
 
-        public string GetName()
-        {
-            return Name;
-        }
 
         public string DescribeChallenge()
         {
