@@ -20,23 +20,27 @@ namespace InterviewReviewer
 
         public void DisplayChallenges()
         {
-            Console.WriteLine("C# Interview Reviewer");
-            Console.WriteLine("---------------------\n");
-            Console.WriteLine("Choose a Challenge:\n");
+            while (true) 
+            {
+                Console.Clear();
+                Console.WriteLine("C# Interview Reviewer");
+                Console.WriteLine("---------------------\n");
+                Console.WriteLine("Choose a Challenge Number:\n");
 
-            var choice = int.Parse(Console.ReadLine());
+                for (int i = 1; i <= Challenges.Count(); i++)
+                {
+                    Console.WriteLine(i + ": " + Challenges[i - 1].GetName());
+                }
 
-            // check choice is valid
-            // non null
-            // is an int
-            // is <= Challenges.Count
+                Console.WriteLine("\n");
+                var choice = Console.ReadLine();
 
-
-
-
-
-
-
+                if (int.TryParse(choice, out int choiceNumber) && choiceNumber > 0 && choiceNumber <= Challenges.Count())
+                {
+                    Console.WriteLine("Opening Challenge {0}...", choiceNumber);
+                    Console.ReadLine();
+                }
+            }
         }
 
         public void ListChallenges()
