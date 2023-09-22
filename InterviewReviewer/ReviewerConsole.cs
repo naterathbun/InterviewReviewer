@@ -46,7 +46,7 @@ namespace InterviewReviewer
 
             for (int i = 1; i <= Challenges.Count(); i++)
             {
-                Console.WriteLine(i + ": " + Challenges[i - 1].GetName());
+                Console.WriteLine("{0}: {1}",i, Challenges[i - 1].GetName());
             }
 
             Console.WriteLine("\n");
