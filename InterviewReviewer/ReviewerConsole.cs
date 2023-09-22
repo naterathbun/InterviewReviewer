@@ -22,36 +22,34 @@ namespace InterviewReviewer
         {
             while (true) 
             {
-                Console.Clear();
-                Console.WriteLine("C# Interview Reviewer");
-                Console.WriteLine("---------------------\n");
-                Console.WriteLine("Choose a Challenge Number:\n");
+                ListChallenges();                
 
-                for (int i = 1; i <= Challenges.Count(); i++)
-                {
-                    Console.WriteLine(i + ": " + Challenges[i - 1].GetName());
-                }
-
-                Console.WriteLine("\n");
                 var choice = Console.ReadLine();
 
                 if (int.TryParse(choice, out int choiceNumber) && choiceNumber > 0 && choiceNumber <= Challenges.Count())
                 {
                     Console.WriteLine("Opening Challenge {0}...", choiceNumber);
                     Console.ReadLine();
+
+                    // Run Challenges Here
+
                 }
             }
         }
 
-        public void ListChallenges()
+        private void ListChallenges()
         {
-            var challengeNumber = 1;
+            Console.Clear();
+            Console.WriteLine("C# Interview Reviewer");
+            Console.WriteLine("---------------------\n");
+            Console.WriteLine("Choose a Challenge Number:\n");
 
-            foreach (IChallenge challenge in Challenges)
+            for (int i = 1; i <= Challenges.Count(); i++)
             {
-                Console.WriteLine(challengeNumber.ToString() + ": " + challenge.GetName());
-                challengeNumber++;
+                Console.WriteLine(i + ": " + Challenges[i - 1].GetName());
             }
+
+            Console.WriteLine("\n");
         }
     }
 }
