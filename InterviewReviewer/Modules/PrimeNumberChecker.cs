@@ -9,7 +9,7 @@ namespace InterviewReviewer.Modules
 
         public string DescribeModule()
         {
-            return "Enter a positive integer, and the output will be a bool stating if that number is a prime or not.";
+            return "Enter a positive integer, and this module will tell you if that number is a prime or not.";
         }
 
         public void Run()

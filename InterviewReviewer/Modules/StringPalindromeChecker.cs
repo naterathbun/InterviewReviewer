@@ -8,7 +8,7 @@ namespace InterviewReviewer.Modules
 
         public string DescribeModule()
         {
-            return "This program will let you know if the string is or is not a palindrome.\n";
+            return "Enter a string and this module will let you know if it is a palindrome (or not).\n";
         }
 
         public void Run()

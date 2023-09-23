@@ -9,7 +9,7 @@ namespace InterviewReviewer.Modules
 
         public string DescribeModule()
         {
-            return "This program will reverse a string you provide.\n";
+            return "Enter a string and this module will reverse it.\n";
         }
 
         public void Run()
