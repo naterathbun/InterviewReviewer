@@ -1,20 +1,20 @@
 ﻿using InterviewReviewer.Interfaces;
 
-namespace InterviewReviewer.Challenge_Classes
+namespace InterviewReviewer.Modules
 {
-    internal class StringPalindromeChecker : IChallenge
+    internal class StringPalindromeChecker : IModule
     {
         public string Name { get; set; } = "String Palindrome Checker";
 
-        public string DescribeChallenge()
+        public string DescribeModule()
         {
             return "This program will let you know if the string is or is not a palindrome.\n";
         }
 
-        public void DoChallenge()
+        public void Run()
         {
             Console.Write("Please enter a string: ");
-            var stringToCheck = Console.ReadLine();
+            var stringToCheck = Console.ReadLine() ?? "";
 
             char[] stringArray = stringToCheck.ToCharArray();
             Array.Reverse(stringArray);

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace InterviewReviewer.Interfaces
 {
-    public interface IChallenge
+    public interface IModule
     {
         public string Name { get; set; }
 
-        public string DescribeChallenge();
-        public void DoChallenge();
+        public string DescribeModule();
+        public void Run();
     }
 }

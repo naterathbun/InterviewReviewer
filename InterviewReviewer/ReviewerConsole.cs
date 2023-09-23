@@ -1,48 +1,48 @@
-﻿using InterviewReviewer.Challenge_Classes;
+﻿using InterviewReviewer.Modules;
 using InterviewReviewer.Interfaces;
 
 namespace InterviewReviewer
 {
     internal class ReviewerConsole
     {
-        public List<IChallenge> Challenges { get; set; }
+        public List<IModule> Modules { get; set; }
 
-        public ReviewerConsole(List<IChallenge> challenges)
+        public ReviewerConsole(List<IModule> modules)
         {
-            Challenges = challenges;
+            Modules = modules;
         }
 
-        public void DisplayChallenges()
+        public void DisplayModules()
         {
             while (true) 
             {
-                ListChallenges();                
+                ListModules();                
 
                 var choice = Console.ReadLine();
 
-                if (int.TryParse(choice, out int choiceNumber) && choiceNumber > 0 && choiceNumber <= Challenges.Count())
+                if (int.TryParse(choice, out int choiceNumber) && choiceNumber > 0 && choiceNumber <= Modules.Count())
                 {
-                    var challenge = Challenges[choiceNumber - 1];
+                    var module = Modules[choiceNumber - 1];
 
-                    Console.WriteLine("{0}: {1}", challenge.Name, challenge.DescribeChallenge());
+                    Console.WriteLine("{0}: {1}", module.Name, module.DescribeModule());
                     
-                    challenge.DoChallenge();
+                    module.Run();
                     Console.WriteLine("\n\nPress Enter to return to main menu.");
                     Console.ReadLine();
                 }
             }
         }
 
-        private void ListChallenges()
+        private void ListModules()
         {
             Console.Clear();
             Console.WriteLine("C# Interview Reviewer");
             Console.WriteLine("---------------------\n");
-            Console.WriteLine("Choose a Challenge Number:\n");
+            Console.WriteLine("Choose a Module Number:\n");
 
-            for (int i = 1; i <= Challenges.Count; i++)
+            for (int i = 1; i <= Modules.Count; i++)
             {
-                Console.WriteLine("{0}: {1}", i, Challenges[i - 1].Name);
+                Console.WriteLine("{0}: {1}", i, Modules[i - 1].Name);
             }
 
             Console.WriteLine("\n");

@@ -1,21 +1,21 @@
 ﻿using InterviewReviewer.Interfaces;
 
-namespace InterviewReviewer.Challenge_Classes
+namespace InterviewReviewer.Modules
 {
-    internal class StringReverser : IChallenge
+    internal class StringReverser : IModule
     {
         public string Name { get; set; } = "String Reverser";
 
 
-        public string DescribeChallenge()
+        public string DescribeModule()
         {
             return "This program will reverse a string you provide.\n";
         }
 
-        public void DoChallenge()
+        public void Run()
         {
             Console.Write("Please enter a string: ");
-            var stringToReverse = Console.ReadLine();
+            var stringToReverse = Console.ReadLine() ?? "";            
 
             char[] stringArray = stringToReverse.ToCharArray();
             Array.Reverse(stringArray);

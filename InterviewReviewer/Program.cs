@@ -1,5 +1,5 @@
 ﻿using InterviewReviewer;
-using InterviewReviewer.Challenge_Classes;
+using InterviewReviewer.Modules;
 using InterviewReviewer.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -13,11 +13,11 @@ public class Program
         using (var scope = host.Services.CreateScope())
         {
             var serviceProvider = scope.ServiceProvider;                        
-            var challengeProvider = serviceProvider.GetRequiredService<ChallengeProvider>();
-            var challengesList = challengeProvider.GetChallenges();
+            var moduleProvider = serviceProvider.GetRequiredService<ModuleProvider>();
+            var modulesList = moduleProvider.GetModules();
                         
-            var reviewerConsole = new ReviewerConsole(challengesList);
-            reviewerConsole.DisplayChallenges();
+            var reviewerConsole = new ReviewerConsole(modulesList);
+            reviewerConsole.DisplayModules();
         }
 
         host.Run();
@@ -27,27 +27,26 @@ public class Program
         Host.CreateDefaultBuilder(args)
             .ConfigureServices((hostContext, services) =>
             {
-                // List all Challenges here to add to main menu
-                services.AddTransient<IChallenge, StringPalindromeChecker>();
-                services.AddTransient<IChallenge, PrimeNumberChecker>();
-                services.AddTransient<IChallenge, StringReverser>();
-                services.AddTransient<IChallenge, StringSubstringFinder>();
+                services.AddTransient<IModule, StringReverser>();
+                services.AddTransient<IModule, StringPalindromeChecker>();
+                services.AddTransient<IModule, PrimeNumberChecker>();                
+                services.AddTransient<IModule, WeatherForecaster>();
 
-                services.AddScoped<ChallengeProvider>();
+                services.AddScoped<ModuleProvider>();
             });
 
-    public class ChallengeProvider
+    public class ModuleProvider
     {
-        private readonly IEnumerable<IChallenge> _challenges;
+        private readonly IEnumerable<IModule> _modules;
 
-        public ChallengeProvider(IEnumerable<IChallenge> challenges)
+        public ModuleProvider(IEnumerable<IModule> modules)
         {
-            _challenges = challenges;
+            _modules = modules;
         }
 
-        public List<IChallenge> GetChallenges()
+        public List<IModule> GetModules()
         {
-            return _challenges.ToList();
+            return _modules.ToList();
         }
     }
 }
