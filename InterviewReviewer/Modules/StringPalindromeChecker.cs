@@ -20,12 +20,15 @@ namespace InterviewReviewer.Modules
             Array.Reverse(stringArray);
             var reversedString = new string(stringArray);
 
-            Console.Write("When reversed, the string {0} is {1}, which is", stringToCheck, reversedString);
+            if (IsPalindrome(stringToCheck, reversedString))
+                Console.WriteLine("\nWhen reversed, the string {0} is {1}, which IS a palindrome.", stringToCheck, reversedString);
+            else
+                Console.WriteLine("\nWhen reversed, the string {0} is {1}, which IS NOT a palindrome.", stringToCheck, reversedString);
+        }
 
-            if (stringToCheck != reversedString)
-                Console.Write(" not");
-
-            Console.Write(" a palindrome!");            
+        private bool IsPalindrome(string stringToCheck, string reversedString)
+        {
+            return stringToCheck == reversedString ? true : false;
         }
     }
 }

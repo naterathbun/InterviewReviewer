@@ -19,9 +19,9 @@ namespace InterviewReviewer.Modules
             var numberToCheck = int.Parse(userInputNumber);
 
             if (IsPrimeNumber(numberToCheck))
-                Console.WriteLine("\nYes, your number, {0}, is a prime number.", numberToCheck);
+                Console.WriteLine("\nYes, your number, {0}, IS a prime number.", numberToCheck);
             else
-                Console.WriteLine("\nNo, your number, {0}, isn't a prime number", numberToCheck);
+                Console.WriteLine("\nNo, your number, {0}, IS NOT a prime number", numberToCheck);
         }
 
         private bool IsPrimeNumber(int numberToCheck)
