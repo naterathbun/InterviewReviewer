@@ -30,7 +30,7 @@ namespace InterviewReviewer.Modules
 
         public void Run()
         {
-            Console.Write("Please enter a US Zip Code: ");
+            Console.Write("Please enter a five digit US Zip Code: ");
             var zipCode = Console.ReadLine() ?? "";
 
             // To Do: Zip code validation
@@ -73,7 +73,8 @@ namespace InterviewReviewer.Modules
 
         private WeatherData Deserialize(string json)
         {
-            return JsonConvert.DeserializeObject<WeatherData>(json);
+            var data = JsonConvert.DeserializeObject<WeatherData>(json);
+            return data != null ? data : new WeatherData();
         }
 
         private void DisplayWeather(WeatherData weatherData)
