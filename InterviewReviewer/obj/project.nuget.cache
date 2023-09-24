@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "dRMN6TicBTjyQKprZpE1IhbNa6S6OoqLH0VDczn9FrokPKJY6JQCmJgGB47Txkj+thlrUfrPr6g9tuUwjP9agw==",
+  "dgSpecHash": "b5BsLXDJAFDUF+ZNynPqSsdyRnM3HduxPsLhQ3RdPHhheSaueoTGQP32Sm/VdvNq8vPVjLvSMh4Zugm5CQmK7Q==",
   "success": true,
   "projectFilePath": "C:\\Code\\InterviewReviewer\\InterviewReviewer\\InterviewReviewer.csproj",
   "expectedPackageFiles": [
@@ -29,6 +29,7 @@
     "C:\\Users\\nater\\.nuget\\packages\\microsoft.extensions.options\\7.0.1\\microsoft.extensions.options.7.0.1.nupkg.sha512",
     "C:\\Users\\nater\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\7.0.0\\microsoft.extensions.options.configurationextensions.7.0.0.nupkg.sha512",
     "C:\\Users\\nater\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
+    "C:\\Users\\nater\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\nater\\.nuget\\packages\\system.diagnostics.diagnosticsource\\7.0.1\\system.diagnostics.diagnosticsource.7.0.1.nupkg.sha512",
     "C:\\Users\\nater\\.nuget\\packages\\system.diagnostics.eventlog\\7.0.0\\system.diagnostics.eventlog.7.0.0.nupkg.sha512",
     "C:\\Users\\nater\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",

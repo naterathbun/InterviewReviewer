@@ -1,5 +1,4 @@
-﻿using InterviewReviewer.Modules;
-using InterviewReviewer.Interfaces;
+﻿using InterviewReviewer.Interfaces;
 
 namespace InterviewReviewer
 {
