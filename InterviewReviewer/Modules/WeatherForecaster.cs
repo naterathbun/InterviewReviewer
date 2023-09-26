@@ -2,6 +2,7 @@
 using InterviewReviewer.Interfaces;
 using InterviewReviewer.Weather;
 using Newtonsoft.Json;
+using System.Text.RegularExpressions;
 
 namespace InterviewReviewer.Modules
 {
@@ -25,15 +26,20 @@ namespace InterviewReviewer.Modules
 
         public string DescribeModule()
         {
-            return "Enter a zip code, and this module will tell you the current weather using the WeatherAPI.com web API.";
+            return "Enter a zip code, and this module will show the current weather using the WeatherAPI.com web API.";
         }
 
         public void Run()
         {
-            Console.Write("Please enter a five digit US Zip Code: ");
-            var zipCode = Console.ReadLine() ?? "";
+            var zipCode = "";
+            var isValidZipCode = false;
 
-            // To Do: Zip code validation
+            while (isValidZipCode == false)
+            {
+                Console.Write("Please enter a five digit US Zip Code: ");
+                zipCode = Console.ReadLine() ?? "";
+                isValidZipCode = ValidateZipCode(zipCode);
+            }
 
             Task.Run(async () =>
             {
@@ -63,6 +69,11 @@ namespace InterviewReviewer.Modules
                 var weatherData = Deserialize(body);
                 DisplayWeather(weatherData);
             }
+        }
+
+        private bool ValidateZipCode(string zipCode)
+        {            
+            return Regex.IsMatch(zipCode, @"^\d{5}$"); // Validates zipCode is a 5 digit number
         }
 
         private Uri GetUri(string zipCode)
