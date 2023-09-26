@@ -49,30 +49,36 @@ namespace InterviewReviewer.Modules
 
         private async Task RunAsync(string zipCode)
         {
-            // To Do: Try/Catch
-
-            var client = new HttpClient();
-            var request = new HttpRequestMessage
+            try
             {
-                Method = HttpMethod.Get,
-                RequestUri = GetUri(zipCode),
-                Headers =
+                var client = new HttpClient();
+                var request = new HttpRequestMessage
                 {
-                    { "X-RapidAPI-Key", _apiKey },
-                    { "X-RapidAPI-Host", _apiHost },
-                },
-            };
-            using (var response = await client.SendAsync(request))
+                    Method = HttpMethod.Get,
+                    RequestUri = GetUri(zipCode),
+                    Headers =
+                    {
+                        { "X-RapidAPI-Key", _apiKey },
+                        { "X-RapidAPI-Host", _apiHost },
+                    },
+                };
+                using (var response = await client.SendAsync(request))
+                {
+                    response.EnsureSuccessStatusCode();
+                    var body = await response.Content.ReadAsStringAsync();
+                    var weatherData = Deserialize(body);
+                    DisplayWeather(weatherData);
+                }
+            }
+            catch (Exception exception)
             {
-                response.EnsureSuccessStatusCode();
-                var body = await response.Content.ReadAsStringAsync();
-                var weatherData = Deserialize(body);
-                DisplayWeather(weatherData);
+                Console.WriteLine("Oops, an error occurred: {0}", exception.Message);
+                // To Do: Logging
             }
         }
 
         private bool ValidateZipCode(string zipCode)
-        {            
+        {
             return Regex.IsMatch(zipCode, @"^\d{5}$"); // Validates zipCode is a 5 digit number
         }
 
