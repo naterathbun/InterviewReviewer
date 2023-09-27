@@ -20,6 +20,7 @@ namespace InterviewReviewer.Modules
             {
                 if (File.Exists(path))
                 {
+                    journalEntry = "\n\n" + journalEntry;
                     File.AppendAllText(path, journalEntry);
                     Console.WriteLine("Succesfully saved a journal entry to {0}.", path);
                 }
