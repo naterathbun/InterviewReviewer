@@ -27,10 +27,11 @@ namespace InterviewReviewer.Modules
         private bool IsPrimeNumber(int numberToCheck)
         {
             // Check special cases (Negatives, 0, 1, 2, 3) and numbers divisable by 2 or 3
-            if (numberToCheck <= 1 || numberToCheck % 2 == 0 || numberToCheck % 3 == 0)
-                return false;
             if (numberToCheck == 2 || numberToCheck == 3)
                 return true;
+            if (numberToCheck <= 1 || numberToCheck % 2 == 0 || numberToCheck % 3 == 0)
+                return false;
+
 
             // Check for factors using the 6k+/-1 rule
             for (int i = 5; i * i <= numberToCheck; i += 6)

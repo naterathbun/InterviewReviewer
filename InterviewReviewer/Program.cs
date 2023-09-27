@@ -17,7 +17,7 @@ public class Program
             var modulesList = moduleProvider.GetModules();
                         
             var reviewerConsole = new ReviewerConsole(modulesList);
-            reviewerConsole.DisplayModules();
+            reviewerConsole.DisplayMenu();
         }
 
         host.Run();

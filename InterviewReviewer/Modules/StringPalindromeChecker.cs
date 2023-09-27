@@ -16,19 +16,19 @@ namespace InterviewReviewer.Modules
             Console.Write("Please enter a string: ");
             var stringToCheck = Console.ReadLine() ?? "";
 
+            if (IsPalindrome(stringToCheck))
+                Console.WriteLine("\nWhen reversed, the string {0} is {1}, which IS a palindrome.", stringToCheck);
+            else
+                Console.WriteLine("\nWhen reversed, the string {0} is {1}, which IS NOT a palindrome.", stringToCheck);
+        }
+
+        private bool IsPalindrome(string stringToCheck)
+        {
             char[] stringArray = stringToCheck.ToCharArray();
             Array.Reverse(stringArray);
             var reversedString = new string(stringArray);
 
-            if (IsPalindrome(stringToCheck, reversedString))
-                Console.WriteLine("\nWhen reversed, the string {0} is {1}, which IS a palindrome.", stringToCheck, reversedString);
-            else
-                Console.WriteLine("\nWhen reversed, the string {0} is {1}, which IS NOT a palindrome.", stringToCheck, reversedString);
-        }
-
-        private bool IsPalindrome(string stringToCheck, string reversedString)
-        {
-            return stringToCheck == reversedString ? true : false;
+            return stringToCheck == reversedString;
         }
     }
 }

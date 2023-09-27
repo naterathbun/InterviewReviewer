@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 using InterviewReviewer.Interfaces;
-using InterviewReviewer.Weather;
 using Newtonsoft.Json;
 using System.Text.RegularExpressions;
+using InterviewReviewer.Modules.Models;
 
 namespace InterviewReviewer.Modules
 {
@@ -43,11 +43,11 @@ namespace InterviewReviewer.Modules
 
             Task.Run(async () =>
             {
-                await RunAsync(zipCode);
+                await QueryWeather(zipCode);
             }).Wait();
         }
 
-        private async Task RunAsync(string zipCode)
+        private async Task QueryWeather(string zipCode)
         {
             try
             {

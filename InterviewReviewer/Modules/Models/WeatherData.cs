@@ -1,4 +1,4 @@
-﻿namespace InterviewReviewer.Weather
+﻿namespace InterviewReviewer.Modules.Models
 {
     public class WeatherData
     {

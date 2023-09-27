@@ -11,7 +11,7 @@ namespace InterviewReviewer
             Modules = modules;
         }
 
-        public void DisplayModules()
+        public void DisplayMenu()
         {
             while (true) 
             {
