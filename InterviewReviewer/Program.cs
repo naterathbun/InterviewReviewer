@@ -31,6 +31,7 @@ public class Program
                 services.AddTransient<IModule, StringPalindromeChecker>();
                 services.AddTransient<IModule, PrimeNumberChecker>();                
                 services.AddTransient<IModule, WeatherForecaster>();
+                services.AddTransient<IModule, JournalWriter>();
 
                 services.AddScoped<ModuleProvider>();
             });
