@@ -27,11 +27,13 @@ public class Program
         Host.CreateDefaultBuilder(args)
             .ConfigureServices((hostContext, services) =>
             {
+                // Register a new module in the container here to add it to the program.
                 services.AddTransient<IModule, StringReverser>();
                 services.AddTransient<IModule, StringPalindromeChecker>();
                 services.AddTransient<IModule, PrimeNumberChecker>();                
                 services.AddTransient<IModule, WeatherForecaster>();
                 services.AddTransient<IModule, JournalWriter>();
+                services.AddTransient<IModule, EmailSender>();
 
                 services.AddScoped<ModuleProvider>();
             });
